@@ -1,0 +1,11 @@
+build/
+vendor/
+*.apk
+*.idsig
+*.keystore
+*.jks
+.DS_Store
+.idea/
+*.iml
+local.properties
+

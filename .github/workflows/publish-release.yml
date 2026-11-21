@@ -1,0 +1,33 @@
+name: Publish Android release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reassemble and verify APK
+        run: |
+          mkdir -p dist
+          cat release/parts/vuong-quoc-tuyet-v2.8.apk.part-* > dist/vuong-quoc-tuyet-v2.8.apk
+          echo "e9bc70f3cea9162b5c7e6f8d949d8bcbca0754f7ed4a8f24e307548543facbca  dist/vuong-quoc-tuyet-v2.8.apk" | sha256sum --check
+      - name: Publish v2.8.0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v2.8.0 >/dev/null 2>&1; then
+            gh release upload v2.8.0 dist/vuong-quoc-tuyet-v2.8.apk --clobber
+          else
+            gh release create v2.8.0 dist/vuong-quoc-tuyet-v2.8.apk \
+              --title "Vương quốc Tuyết v2.8.0" \
+              --notes-file RELEASE_NOTES.md \
+              --latest
+          fi
+

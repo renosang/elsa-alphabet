@@ -1,0 +1,45 @@
+name: VuongQuocTuyet
+options:
+  bundleIdPrefix: vn.vuongquoctuyet
+  deploymentTarget:
+    iOS: "16.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "16.0"
+targets:
+  VuongQuocTuyet:
+    type: application
+    platform: iOS
+    sources:
+      - path: VuongQuocTuyet
+      - path: ../assets
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: vn.vuongquoctuyet.hocchu
+        PRODUCT_NAME: Vương quốc Tuyết
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: NO
+        CODE_SIGN_STYLE: Manual
+    info:
+      path: VuongQuocTuyet/Info.plist
+      properties:
+        CFBundleDisplayName: Vương quốc Tuyết
+        UILaunchScreen: {}
+        UIRequiresFullScreen: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSPhotoLibraryAddUsageDescription: Lưu tranh của bé vào thư viện ảnh.
+        UIAppFonts:
+          - assets/fonts/nunito-medium.ttf
+          - assets/fonts/nunito-bold.ttf
+

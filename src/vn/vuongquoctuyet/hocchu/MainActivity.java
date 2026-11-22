@@ -1953,14 +1953,28 @@ public final class MainActivity extends Activity {
             clip.setDataSource(file.getFileDescriptor(), file.getStartOffset(), file.getLength());
             clip.setOnPreparedListener(ready -> {
                 if (player != ready) return;
-                if (speed != 1f) ready.setPlaybackParams(ready.getPlaybackParams().setSpeed(speed));
-                ready.start();
-                if (princess != null) princess.speaking();
+                // Some Android vendors throw from PlaybackParams for perfectly valid MP3
+                // streams (notably after an app update changes encoder/sample rate). Audio
+                // speed is an enhancement, so fall back to the original speed instead of
+                // allowing the UI thread to crash when a child opens a lesson.
+                if (speed != 1f) {
+                    try {
+                        ready.setPlaybackParams(ready.getPlaybackParams().setSpeed(speed));
+                    } catch (RuntimeException unsupportedSpeed) {
+                        // Keep playing at the file's native speed.
+                    }
+                }
+                try {
+                    ready.start();
+                    if (princess != null) princess.speaking();
+                } catch (RuntimeException playbackFailure) {
+                    voiceEnded(ready, complete);
+                }
             });
             clip.setOnCompletionListener(ended -> voiceEnded(ended, complete));
             clip.setOnErrorListener((failed, what, extra) -> { voiceEnded(failed, complete); return true; });
             clip.prepareAsync();
-        } catch (IOException | IllegalStateException failure) {
+        } catch (IOException | RuntimeException failure) {
             voiceEnded(clip, complete);
         }
     }
@@ -1973,8 +1987,14 @@ public final class MainActivity extends Activity {
 
     private void stopVoice() {
         if (player != null) {
-            player.release();
+            MediaPlayer ending = player;
             player = null;
+            try {
+                ending.reset();
+            } catch (RuntimeException ignored) { }
+            try {
+                ending.release();
+            } catch (RuntimeException ignored) { }
             mentorPose(DaylightArt.Princess.IDLE, 0);
         }
     }

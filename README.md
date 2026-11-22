@@ -2,6 +2,8 @@
 
 Ứng dụng Android giáo dục tương tác dành cho trẻ nhỏ học bảng chữ cái tiếng Việt, từ vựng và các mini-game trực quan.
 
+APK Android mới nhất: `vuong-quoc-tuyet-v2.9.1.apk`.
+
 ## Tính năng chính
 
 - Học 29 chữ cái tiếng Việt theo đúng thứ tự.

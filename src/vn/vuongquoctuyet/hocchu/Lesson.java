@@ -14,7 +14,7 @@ final class Lesson {
         new Lesson("ee", "ê", "ê", ex("con |dê|", "🐐", 4), ex("cái |ghế|", "🪑"), "e"),
         new Lesson("m", "m", "mờ", ex("con |mèo|", "🐱", 5), ex("con |mực|", "🦑"), "n"),
 
-        new Lesson("aw", "ă", "á", ex("mặt |trăng|", "🌙", 6), ex("cái |khăn|", "🧣"), "aa"),
+        new Lesson("aw", "ă", "á", ex("cái |khăn|", "🧣"), ex("mặt |trăng|", "🌙", 6), "aa"),
         new Lesson("aa", "â", "ớ", ex("cái |cân|", "⚖️", 7), ex("|sân| chơi", "🛝"), "aw"),
         new Lesson("b", "b", "bờ", ex("|bánh| mì", "🍞", 8), ex("quả |bóng|", "⚽"), "d"),
         new Lesson("c", "c", "cờ", ex("con |cá|", "🐟", 9), ex("con |cáo|", "🦊", 11), "k"),

@@ -1468,7 +1468,7 @@ public final class MainActivity extends Activity {
             ? "Cùng ôn lại với cô" : introState == 0 ? "Bài đầu tiên hôm nay" : "Khám phá chữ tiếp theo");
         String intro = introState == 2 ? lesson().key + "_review"
             : introState == 1 ? lesson().key + "_next" + promptVariant : lesson().key + "_intro";
-        voice(intro, .94f, () -> scheduleSample(version, 420, () -> playSample(version)));
+        voice(intro, 1f, () -> scheduleSample(version, 260, () -> playSample(version)));
     }
 
     private void playSample() {
@@ -1491,7 +1491,7 @@ public final class MainActivity extends Activity {
         handler.postDelayed(() -> {
             if (active && scene == LISTEN && pageRevision == revision && samplePicture != null) pulse(samplePicture);
         }, 3150);
-        voice(lesson().key + "_sample" + exampleIndex, .90f, () -> {
+        voice(lesson().key + "_sample" + exampleIndex, 1f, () -> {
             if (version != listenVersion || scene != LISTEN) return;
             listenComplete = true;
             if (sampleStatus != null) sampleStatus.setText("Đã mở khóa trò chơi!");
@@ -1595,7 +1595,7 @@ public final class MainActivity extends Activity {
         pulse(target);
         cancelHint();
         if (sampleStatus != null) sampleStatus.setText("Nghe tên hình");
-        voice(clip, .86f, null);
+        voice(clip, 1f, null);
     }
 
     View examplePicture(Lesson.Example example, int emojiSize) {
@@ -1812,7 +1812,7 @@ public final class MainActivity extends Activity {
                 tickNext(next, family.studyDelay(family.active()));
                 return;
             }
-            voice(Lesson.ALL[next].key + "_bridge", .94f, () -> {
+            voice(Lesson.ALL[next].key + "_bridge", 1f, () -> {
                 if (!active || revision != pageRevision || nextPaused) return;
                 announcedNextIndex = next;
                 tickNext(next, family.studyDelay(family.active()));

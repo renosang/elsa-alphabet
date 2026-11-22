@@ -24,12 +24,12 @@ final class Lesson {
         new Lesson("h", "h", "hờ", ex("bông |hoa|", "🌼", 13), ex("cái |hộp|", "📦"), "n"),
 
         new Lesson("i", "i", "i", ex("cái |kim|", "🪡", 31), ex("bút |chì|", "✏️"), "y"),
-        new Lesson("k", "k", "ca", ex("thước |kẻ|", "📏", 14), ex("cái |kéo|", "✂️"), "h"),
+        new Lesson("k", "k", "cờ", ex("thước |kẻ|", "📏", 14), ex("cái |kéo|", "✂️"), "h"),
         new Lesson("l", "l", "lờ", ex("quả |lê|", "🍐", 15), ex("con |lợn|", "🐷", 17), "i"),
         new Lesson("n", "n", "nờ", ex("cái |nón|", "👒", 16), ex("quả |na|", "🍈"), "m"),
         new Lesson("ow", "ơ", "ơ", ex("quả |mơ|", "🍑", 18), ex("quả |bơ|", "🥑"), "oo"),
-        new Lesson("p", "p", "pê", ex("viên |pin|", "🔋", 32), ex("đèn |pin|", "🔦", 34), "q"),
-        new Lesson("q", "q", "quy", ex("cái |quạt|", "🪭", 19), ex("quả |quýt|", "🍊"), "p"),
+        new Lesson("p", "p", "pờ", ex("viên |pin|", "🔋", 32), ex("đèn |pin|", "🔦", 34), "q"),
+        new Lesson("q", "q", "quờ", ex("cái |quạt|", "🪭", 19), ex("quả |quýt|", "🍊"), "p"),
         new Lesson("r", "r", "rờ", ex("con |rắn|", "🐍", 20), ex("củ cà |rốt|", "🥕"), "d"),
 
         new Lesson("s", "s", "sờ", ex("ngôi |sao|", "⭐", 21), ex("hoa |sen|", "🪷"), "x"),
@@ -38,7 +38,7 @@ final class Lesson {
         new Lesson("uw", "ư", "ư", ex("con |cừu|", "🐑", 33), ex("|sư| tử", "🦁", 39), "u"),
         new Lesson("v", "v", "vờ", ex("cuộn |vải|", "🧵", 25), ex("con |vịt|", "🦆", 26), "u"),
         new Lesson("x", "x", "xờ", ex("máy |xúc|", "🚜", 27), ex("|xích| đu", "🛝", 40), "s"),
-        new Lesson("y", "y", "i dài", ex("|y| tá", "🧑‍⚕️", 28), ex("chim |yến|", "🐦"), "i")
+        new Lesson("y", "y", "i", ex("|y| tá", "🧑‍⚕️", 28), ex("chim |yến|", "🐦"), "i")
     };
 
     private static final String ALPHABET = "aăâbcdđeêghiklmnoôơpqrstuưvxy";

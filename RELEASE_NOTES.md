@@ -1,4 +1,11 @@
-# Vương quốc Tuyết v2.9.2
+# Vương quốc Tuyết v2.9.3
+
+- Tạo lại 377 đoạn thoại bằng một giọng nữ miền Nam thống nhất và đọc trọn câu, không còn ghép các mảnh âm thanh gây khựng.
+- Dùng bảng âm vị tiếng Việt độc lập với ký tự hiển thị: B đọc “bờ”, Ă đọc “á”; không còn nguy cơ TTS đọc B theo tiếng Anh.
+- Chuẩn hóa âm học vần: K “cờ”, P “pờ”, Q “quờ”, Y “i”.
+- Câu mẫu mới có nhịp nghỉ và ngữ điệu tự nhiên: đọc âm ba lần, đặt câu hỏi rồi mới giới thiệu hình.
+- Bỏ kéo chậm âm thanh bằng Android để giữ nguyên cao độ và ngữ điệu của bản thu.
+- Đã kiểm thử mở bài B và Ă trên Android 15; phát âm thanh thành công và không có `FATAL EXCEPTION`.
 
 - Sửa đúng nguyên nhân khiến app đóng ngay khi mở “Học chữ”: ví dụ “cái khăn” của chữ Ă không có bitmap riêng nhưng giao diện cũ vẫn cố đọc `card-1.webp`.
 - Bảng chữ giờ tự động dùng hình bitmap sắc nét khi có và dùng emoji an toàn khi chưa có ảnh riêng.
@@ -18,4 +25,4 @@
 - Thêm hiệu ứng phép thuật, gợi ý thông minh và chuỗi trả lời đúng.
 - Cải thiện giao diện responsive, góc phụ huynh và các module trò chơi.
 
-SHA-256 APK: `8bdd7c73f9cd9f1c904a742a94708573e54e93a7ce5569ff69538e20650c6e8d`
+SHA-256 APK: `3fb061237614bd87b236c1cc80c3318a60f0901ca9bb58747c87aed68cc797f5`

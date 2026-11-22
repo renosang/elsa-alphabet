@@ -16,15 +16,15 @@ jobs:
       - name: Reassemble and verify APK
         run: |
           mkdir -p dist
-          cat release/parts-v2.9.1/vuong-quoc-tuyet-v2.9.1.apk.part-* > dist/vuong-quoc-tuyet-v2.9.1.apk
-          echo "968c5eb80181f3838f2c0a9ce91e129528b755b34b43cc76714b3802cc036e1d  dist/vuong-quoc-tuyet-v2.9.1.apk" | sha256sum --check
-      - name: Publish v2.9.1
+          cat release/parts-v2.9.2/vuong-quoc-tuyet-v2.9.2.apk.part-* > dist/vuong-quoc-tuyet-v2.9.2.apk
+          echo "8bdd7c73f9cd9f1c904a742a94708573e54e93a7ce5569ff69538e20650c6e8d  dist/vuong-quoc-tuyet-v2.9.2.apk" | sha256sum --check
+      - name: Publish v2.9.2
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if ! gh release view v2.9.1 >/dev/null 2>&1; then
-            gh release create v2.9.1 --title "Vương quốc Tuyết v2.9.1" \
+          if ! gh release view v2.9.2 >/dev/null 2>&1; then
+            gh release create v2.9.2 --title "Vương quốc Tuyết v2.9.2" \
               --notes-file RELEASE_NOTES.md --latest || true
           fi
-          gh release upload v2.9.1 dist/vuong-quoc-tuyet-v2.9.1.apk --clobber
+          gh release upload v2.9.2 dist/vuong-quoc-tuyet-v2.9.2.apk --clobber
 

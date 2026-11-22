@@ -1170,7 +1170,10 @@ public final class MainActivity extends Activity {
                 glyph.setGravity(Gravity.CENTER);
                 glyph.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
                 tile.addView(glyph, new LinearLayout.LayoutParams(-1, -2));
-                View picture = new FlashcardView(example.art);
+                // Not every example has a bundled bitmap (for example "cái khăn").
+                // Use the same safe bitmap/emoji fallback as the lesson card instead
+                // of trying to open an impossible assets/illustrations/card-1.webp.
+                View picture = examplePicture(example, landscapeMode() ? 30 : 42);
                 picture.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
                 tile.addView(picture, new LinearLayout.LayoutParams(-1, dp(landscapeMode() ? 37 : 53)));
                 makePressable(tile, () -> startLesson(index, LISTEN, -1));

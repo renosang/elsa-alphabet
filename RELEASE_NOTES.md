@@ -1,4 +1,8 @@
-# Vương quốc Tuyết v2.9.1
+# Vương quốc Tuyết v2.9.2
+
+- Sửa đúng nguyên nhân khiến app đóng ngay khi mở “Học chữ”: ví dụ “cái khăn” của chữ Ă không có bitmap riêng nhưng giao diện cũ vẫn cố đọc `card-1.webp`.
+- Bảng chữ giờ tự động dùng hình bitmap sắc nét khi có và dùng emoji an toàn khi chưa có ảnh riêng.
+- Đã chạy kiểm thử thật trên Android 15: mở “Học chữ”, hiển thị đủ bảng chữ và mở bài chữ A thành công, không có `FATAL EXCEPTION`.
 
 - Sửa lỗi ứng dụng bị đóng đột ngột khi chạm vào một chữ để bắt đầu bài học trên một số thiết bị Android.
 - Bộ phát âm thanh giờ tự động dùng tốc độ gốc nếu thiết bị không hỗ trợ thay đổi tốc độ MP3.
@@ -14,4 +18,4 @@
 - Thêm hiệu ứng phép thuật, gợi ý thông minh và chuỗi trả lời đúng.
 - Cải thiện giao diện responsive, góc phụ huynh và các module trò chơi.
 
-SHA-256 APK: `968c5eb80181f3838f2c0a9ce91e129528b755b34b43cc76714b3802cc036e1d`
+SHA-256 APK: `8bdd7c73f9cd9f1c904a742a94708573e54e93a7ce5569ff69538e20650c6e8d`

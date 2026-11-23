@@ -18,7 +18,7 @@ Workflow `Build unsigned iOS IPA` biên dịch với `CODE_SIGNING_ALLOWED=NO`, 
 Để cài lên iPhone, hãy ký lại IPA bằng certificate và provisioning profile hợp lệ. Bundle ID mặc định:
 
 ```text
-vn.vuongquoctuyet.hocchu
+A4.alexd.ios.beta
 ```
 
 Provisioning profile phải khớp Bundle ID này, hoặc công cụ ký cần đổi Bundle ID và cập nhật profile tương ứng. Với Ad Hoc profile, UDID của thiết bị phải nằm trong profile.

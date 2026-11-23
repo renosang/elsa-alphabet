@@ -18,7 +18,10 @@ targets:
         buildPhase: resources
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: vn.vuongquoctuyet.hocchu
+        # Explicit App ID from the user's ESign provisioning profile "44".
+        # ESign did not rewrite the original identifier, so build it into the
+        # app before signing to guarantee an entitlement/profile match.
+        PRODUCT_BUNDLE_IDENTIFIER: A4.alexd.ios.beta
         # Keep the technical bundle/executable name ASCII for maximum
         # compatibility with third-party IPA signing tools. The name shown on
         # the home screen remains Vietnamese through CFBundleDisplayName.

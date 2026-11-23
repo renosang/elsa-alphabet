@@ -29,6 +29,8 @@ targets:
       path: VuongQuocTuyet/Info.plist
       properties:
         CFBundleDisplayName: Vương quốc Tuyết
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         UILaunchScreen: {}
         UIRequiresFullScreen: false
         UISupportedInterfaceOrientations:

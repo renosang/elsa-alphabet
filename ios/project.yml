@@ -19,7 +19,12 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: vn.vuongquoctuyet.hocchu
-        PRODUCT_NAME: Vương quốc Tuyết
+        # Keep the technical bundle/executable name ASCII for maximum
+        # compatibility with third-party IPA signing tools. The name shown on
+        # the home screen remains Vietnamese through CFBundleDisplayName.
+        PRODUCT_NAME: VuongQuocTuyet
+        PRODUCT_MODULE_NAME: VuongQuocTuyet
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         TARGETED_DEVICE_FAMILY: "1,2"
         SUPPORTS_MACCATALYST: NO
         CODE_SIGN_STYLE: Manual
@@ -29,6 +34,7 @@ targets:
       path: VuongQuocTuyet/Info.plist
       properties:
         CFBundleDisplayName: Vương quốc Tuyết
+        CFBundleName: VuongQuocTuyet
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         UILaunchScreen: {}

@@ -40,9 +40,16 @@ jobs:
         run: |
           APP_PATH=$(find build/Build/Products/Release-iphoneos -maxdepth 1 -name '*.app' -print -quit)
           test -n "$APP_PATH"
+          test "$(basename "$APP_PATH")" = "VuongQuocTuyet.app"
+          test -f "$APP_PATH/AppIcon60x60@2x.png"
+          test -f "$APP_PATH/Assets.car"
+          test ! -d "$APP_PATH/_CodeSignature"
+          test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP_PATH/Info.plist")" = "vn.vuongquoctuyet.hocchu"
+          test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$APP_PATH/Info.plist")" = "2.9.3"
+          test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' "$APP_PATH/Info.plist")" = "22"
           mkdir -p Payload
           cp -R "$APP_PATH" Payload/
-          zip -qry vuong-quoc-tuyet-ios-v2.9.3-unsigned.ipa Payload
+          ditto -c -k --sequesterRsrc --keepParent Payload vuong-quoc-tuyet-ios-v2.9.3-unsigned.ipa
           shasum -a 256 vuong-quoc-tuyet-ios-v2.9.3-unsigned.ipa > vuong-quoc-tuyet-ios-v2.9.3-unsigned.ipa.sha256
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v4

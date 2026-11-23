@@ -29,7 +29,7 @@ APK cài đặt sẵn có trong mục [Releases](../../releases).
 ## iOS
 
 Mã nguồn SwiftUI nằm trong thư mục `ios/`. GitHub Actions tạo file
-`vuong-quoc-tuyet-ios-v2.9-unsigned.ipa` chưa ký để chủ sở hữu tự ký bằng
+`vuong-quoc-tuyet-ios-v2.9.3-unsigned.ipa` chưa ký để chủ sở hữu tự ký bằng
 Apple Distribution/Development certificate và provisioning profile phù hợp.
 
 IPA chưa ký không thể cài trực tiếp lên iPhone. Bundle ID mặc định là

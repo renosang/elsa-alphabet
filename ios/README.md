@@ -13,7 +13,7 @@ open VuongQuocTuyet.xcodeproj
 
 ## IPA chưa ký
 
-Workflow `Build unsigned iOS IPA` biên dịch với `CODE_SIGNING_ALLOWED=NO`, đóng gói `.app` thành IPA và đính kèm vào GitHub Release `v2.9.0`.
+Workflow `Build unsigned iOS IPA` biên dịch với `CODE_SIGNING_ALLOWED=NO`, đóng gói `.app` thành IPA và đính kèm vào GitHub Release `v2.9.3`.
 
 Để cài lên iPhone, hãy ký lại IPA bằng certificate và provisioning profile hợp lệ. Bundle ID mặc định:
 

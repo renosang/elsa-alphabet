@@ -42,24 +42,24 @@ jobs:
           test -n "$APP_PATH"
           mkdir -p Payload
           cp -R "$APP_PATH" Payload/
-          zip -qry vuong-quoc-tuyet-ios-v2.9-unsigned.ipa Payload
-          shasum -a 256 vuong-quoc-tuyet-ios-v2.9-unsigned.ipa > vuong-quoc-tuyet-ios-v2.9-unsigned.ipa.sha256
+          zip -qry vuong-quoc-tuyet-ios-v2.9.3-unsigned.ipa Payload
+          shasum -a 256 vuong-quoc-tuyet-ios-v2.9.3-unsigned.ipa > vuong-quoc-tuyet-ios-v2.9.3-unsigned.ipa.sha256
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v4
         with:
-          name: vuong-quoc-tuyet-ios-v2.9-unsigned
+          name: vuong-quoc-tuyet-ios-v2.9.3-unsigned
           path: |
-            ios/vuong-quoc-tuyet-ios-v2.9-unsigned.ipa
-            ios/vuong-quoc-tuyet-ios-v2.9-unsigned.ipa.sha256
+            ios/vuong-quoc-tuyet-ios-v2.9.3-unsigned.ipa
+            ios/vuong-quoc-tuyet-ios-v2.9.3-unsigned.ipa.sha256
       - name: Attach IPA to release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if ! gh release view v2.9.0 >/dev/null 2>&1; then
-            gh release create v2.9.0 --title "Vương quốc Tuyết v2.9.0" --notes-file RELEASE_NOTES.md || true
+          if ! gh release view v2.9.3 >/dev/null 2>&1; then
+            gh release create v2.9.3 --title "Vương quốc Tuyết v2.9.3" --notes-file RELEASE_NOTES.md || true
           fi
-          gh release upload v2.9.0 \
-            ios/vuong-quoc-tuyet-ios-v2.9-unsigned.ipa \
-            ios/vuong-quoc-tuyet-ios-v2.9-unsigned.ipa.sha256 \
+          gh release upload v2.9.3 \
+            ios/vuong-quoc-tuyet-ios-v2.9.3-unsigned.ipa \
+            ios/vuong-quoc-tuyet-ios-v2.9.3-unsigned.ipa.sha256 \
             --clobber
 

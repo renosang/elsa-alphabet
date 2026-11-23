@@ -23,8 +23,8 @@ targets:
         TARGETED_DEVICE_FAMILY: "1,2"
         SUPPORTS_MACCATALYST: NO
         CODE_SIGN_STYLE: Manual
-        MARKETING_VERSION: 2.9.0
-        CURRENT_PROJECT_VERSION: 19
+        MARKETING_VERSION: 2.9.3
+        CURRENT_PROJECT_VERSION: 22
     info:
       path: VuongQuocTuyet/Info.plist
       properties:
